@@ -26,6 +26,14 @@ class Header extends React.Component {
 						<NavbarToggler onClick={this.toggle} />
 						<Collapse isOpen={this.state.isOpen} navbar>
 						<Nav className="ml-auto header__nav" navbar>
+							<UncontrolledDropdown nav inNavbar>
+								<DropdownToggle nav caret>
+									Options
+								</DropdownToggle>
+								<DropdownMenu>
+									<DropdownItem>Share link</DropdownItem>
+								</DropdownMenu>
+							</UncontrolledDropdown>
 							<NavItem>
 								<NavLink href="">Export</NavLink>
 							</NavItem>
