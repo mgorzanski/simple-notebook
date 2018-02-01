@@ -1,5 +1,7 @@
 import React from 'react';
-import { Collapse, Navbar, Button, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { faUndo, faRedo, faPrint, faUnderline, faItalic, faBold } from '@fortawesome/fontawesome-free-solid';
 
 class Header extends React.Component {
 	constructor(props) {
@@ -43,6 +45,27 @@ class Header extends React.Component {
 						</Nav>
 						</Collapse>
 					</Navbar>
+
+					<Nav pills className="header__format-nav">
+						<NavItem>
+							<NavLink href=""><FontAwesomeIcon icon={faUndo} /></NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink href=""><FontAwesomeIcon icon={faRedo} /></NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink href=""><FontAwesomeIcon icon={faPrint} /></NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink href=""><FontAwesomeIcon icon={faBold} /></NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink href=""><FontAwesomeIcon icon={faItalic} /></NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink href=""><FontAwesomeIcon icon={faUnderline} /></NavLink>
+						</NavItem>
+					</Nav>
 				</header>
 			</React.Fragment>
 		);

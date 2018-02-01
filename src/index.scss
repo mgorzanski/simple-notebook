@@ -1,6 +1,22 @@
 @import "~bootstrap/scss/bootstrap";
 
+$primary-border-color: #E8E8E8;
+
 .header__nav {
 	padding:5px;
 	font-size:1.3em;
+}
+
+.header__format-nav {
+	border-bottom:1px solid $primary-border-color;
+	padding:2px;
+}
+
+.header__format-nav a {
+	color:#000;
+	text-decoration: none;
+}
+
+.header__format-nav a:hover {
+	color:#666;
 }
