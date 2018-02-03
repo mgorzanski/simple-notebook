@@ -50,3 +50,24 @@ $primary-border-color: #E8E8E8;
 .editor {
 	grid-column: 2 / 3;
 }
+
+#form-editor {
+	box-shadow: 0 0 2px #CCC;
+	min-height: 665px;
+	font-size:1rem;
+	padding: 0.375rem 0.75rem;
+	overflow: auto;
+	resize: vertical;
+	outline: none;
+	line-height: 1.5;
+	color:#495057;
+	background-clip: padding-box;
+	border:1px solid #ced4da;
+	border-radius: 0.25rem;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+#form-editor:focus {
+	border-color: #80bdff;
+	box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}

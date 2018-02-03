@@ -19,6 +19,10 @@ class Header extends React.Component {
 		});
 	}
 
+	handleClick(e) {
+		document.execCommand(e.target.getAttribute('data-command'), false, null);
+	}
+
 	render() {
 		return (
 			<React.Fragment>
@@ -48,22 +52,22 @@ class Header extends React.Component {
 
 					<Nav pills className="header__format-nav">
 						<NavItem>
-							<NavLink href=""><FontAwesomeIcon icon={faUndo} /></NavLink>
+							<NavLink href="#" data-command="undo" onClick={this.handleClick.bind(this)}><FontAwesomeIcon icon={faUndo} /></NavLink>
 						</NavItem>
 						<NavItem>
-							<NavLink href=""><FontAwesomeIcon icon={faRedo} /></NavLink>
+							<NavLink href="#" data-command="redo" onClick={this.handleClick.bind(this)}><FontAwesomeIcon icon={faRedo} /></NavLink>
 						</NavItem>
 						<NavItem>
 							<NavLink href=""><FontAwesomeIcon icon={faPrint} /></NavLink>
 						</NavItem>
 						<NavItem>
-							<NavLink href=""><FontAwesomeIcon icon={faBold} /></NavLink>
+							<NavLink href="#" data-command="bold" onClick={this.handleClick.bind(this)}><FontAwesomeIcon icon={faBold} /></NavLink>
 						</NavItem>
 						<NavItem>
-							<NavLink href=""><FontAwesomeIcon icon={faItalic} /></NavLink>
+							<NavLink href="#" data-command="italic" onClick={this.handleClick.bind(this)}><FontAwesomeIcon icon={faItalic} /></NavLink>
 						</NavItem>
 						<NavItem>
-							<NavLink href=""><FontAwesomeIcon icon={faUnderline} /></NavLink>
+							<NavLink href="#" data-command="underline" onClick={this.handleClick.bind(this)}><FontAwesomeIcon icon={faUnderline} /></NavLink>
 						</NavItem>
 					</Nav>
 				</header>

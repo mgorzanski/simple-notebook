@@ -12,7 +12,9 @@ class Editor extends React.Component {
 							<Input type="text" name="name" id="nameInput" placeholder="Title of the note..." />
 						</FormGroup>
 						<FormGroup>
-							<Input type="textarea" name="body" id="bodyInput" />
+							<div id="form-editor" contentEditable>
+								
+							</div>
 						</FormGroup>
 						<Button>Submit</Button>
 					</Form>
