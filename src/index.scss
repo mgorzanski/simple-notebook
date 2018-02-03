@@ -22,9 +22,10 @@ $primary-border-color: #E8E8E8;
 }
 
 .main {
-	margin-top:10px;
 	display:grid;
 	grid-template-columns: 18rem auto;
+	grid-column-gap: 12px;
+	margin:10px 5px 0 5px;
 }
 
 .notes-list {
@@ -44,4 +45,8 @@ $primary-border-color: #E8E8E8;
 	margin:0;
 	font-size:1em;
 	font-weight: normal;
+}
+
+.editor {
+	grid-column: 2 / 3;
 }
