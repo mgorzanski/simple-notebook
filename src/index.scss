@@ -20,3 +20,28 @@ $primary-border-color: #E8E8E8;
 .header__format-nav a:hover {
 	color:#666;
 }
+
+.main {
+	margin-top:10px;
+	display:grid;
+	grid-template-columns: 18rem auto;
+}
+
+.notes-list {
+	grid-column: 1 / 2;
+}
+
+.note-card .note-card__title, .note-card:hover {
+	text-decoration: none;
+	color:#000;
+}
+
+.note-card__body {
+	padding:7px;
+}
+
+.note-card__title {
+	margin:0;
+	font-size:1em;
+	font-weight: normal;
+}
