@@ -47,6 +47,8 @@ $primary-border-color: #E8E8E8;
 
 .notes-list {
 	grid-column: 1 / 2;
+	overflow: auto;
+	height: calc(100vh - 118px);
 }
 
 .note-card .note-card__title, .note-card:hover {
