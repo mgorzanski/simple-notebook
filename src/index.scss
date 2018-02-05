@@ -27,6 +27,24 @@ $primary-border-color: #E8E8E8;
 	margin:10px 5px 0 5px;
 }
 
+.main-home {
+	display:grid;
+	grid-template-columns: 18rem auto 18rem;
+	margin-top:20px;
+}
+
+.home {
+	grid-column: 2 / 3;
+}
+
+.home__card {
+	margin-bottom: 2rem;
+}
+
+.home__card-text a {
+	margin-right:8px;
+}
+
 .notes-list {
 	grid-column: 1 / 2;
 }

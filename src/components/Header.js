@@ -1,7 +1,6 @@
 import React from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import { faUndo, faRedo, faPrint, faUnderline, faItalic, faBold } from '@fortawesome/fontawesome-free-solid';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 class Header extends React.Component {
 	constructor(props) {
@@ -19,16 +18,12 @@ class Header extends React.Component {
 		});
 	}
 
-	handleClick(e) {
-		document.execCommand(e.target.getAttribute('data-command'), false, null);
-	}
-
 	render() {
 		return (
 			<React.Fragment>
 				<header className="header">
 					<Navbar color="light" light className="header__navbar" expand="md">
-						<NavbarBrand href="/">Simple Notebook</NavbarBrand>
+						<NavbarBrand tag={Link} to="/">Simple Notebook</NavbarBrand>
 						<NavbarToggler onClick={this.toggle} />
 						<Collapse isOpen={this.state.isOpen} navbar>
 						<Nav className="ml-auto header__nav" navbar>
