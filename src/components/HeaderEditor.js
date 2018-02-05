@@ -45,6 +45,9 @@ class Header extends React.Component {
 								<NavLink href="">Export</NavLink>
 							</NavItem>
 							<NavItem>
+								<NavLink href="">Save</NavLink>
+							</NavItem>
+							<NavItem>
 								<NavLink href="">Save and close</NavLink>
 							</NavItem>
 						</Nav>

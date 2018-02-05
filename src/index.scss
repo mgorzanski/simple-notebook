@@ -20,16 +20,17 @@ $primary-border-color: #E8E8E8;
 	color:#666;
 }
 
-.main {
+.main-editor {
 	display:grid;
-	grid-template-columns: 18rem auto;
+	grid-template-columns: 1.075fr 6fr;
 	grid-column-gap: 12px;
 	margin:10px 5px 0 5px;
+	height: calc(100vh - 118px);
 }
 
 .main-home {
 	display:grid;
-	grid-template-columns: 18rem auto 18rem;
+	grid-template-columns: 2fr 9.2fr 2fr;
 	margin-top:20px;
 }
 
@@ -48,7 +49,6 @@ $primary-border-color: #E8E8E8;
 .notes-list {
 	grid-column: 1 / 2;
 	overflow: auto;
-	height: calc(100vh - 118px);
 }
 
 .note-card .note-card__title, .note-card:hover {
@@ -72,11 +72,10 @@ $primary-border-color: #E8E8E8;
 
 #form-editor {
 	box-shadow: 0 0 2px #CCC;
-	min-height: 665px;
+	min-height: 729px;
 	font-size:1rem;
 	padding: 0.375rem 0.75rem;
 	overflow: auto;
-	resize: vertical;
 	outline: none;
 	line-height: 1.5;
 	color:#495057;

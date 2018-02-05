@@ -3,14 +3,14 @@ import React from 'react';
 import HeaderEditor from './../HeaderEditor';
 import NotesList from './../NotesList';
 
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Form, FormGroup, Label, Input } from 'reactstrap';
 
 class Editor extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
 				<HeaderEditor />
-				<main className="main">
+				<main className="main-editor">
 					<NotesList />
 					<section className="editor">
 						<Form>
@@ -23,7 +23,6 @@ class Editor extends React.Component {
 									
 								</div>
 							</FormGroup>
-							<Button>Submit</Button>
 						</Form>
 					</section>
 				</main>
