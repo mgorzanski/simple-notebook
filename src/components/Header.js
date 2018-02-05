@@ -32,44 +32,18 @@ class Header extends React.Component {
 						<NavbarToggler onClick={this.toggle} />
 						<Collapse isOpen={this.state.isOpen} navbar>
 						<Nav className="ml-auto header__nav" navbar>
-							<UncontrolledDropdown nav inNavbar>
-								<DropdownToggle nav caret>
-									Options
-								</DropdownToggle>
-								<DropdownMenu>
-									<DropdownItem>Share link</DropdownItem>
-								</DropdownMenu>
-							</UncontrolledDropdown>
 							<NavItem>
-								<NavLink href="">Export</NavLink>
+								<NavLink href="">Preferences</NavLink>
 							</NavItem>
 							<NavItem>
-								<NavLink href="">Save and close</NavLink>
+								<NavLink href="">Account</NavLink>
+							</NavItem>
+							<NavItem>
+								<NavLink href="">Logout</NavLink>
 							</NavItem>
 						</Nav>
 						</Collapse>
 					</Navbar>
-
-					<Nav pills className="header__format-nav">
-						<NavItem>
-							<NavLink href="#" data-command="undo" onClick={this.handleClick.bind(this)}><FontAwesomeIcon icon={faUndo} /></NavLink>
-						</NavItem>
-						<NavItem>
-							<NavLink href="#" data-command="redo" onClick={this.handleClick.bind(this)}><FontAwesomeIcon icon={faRedo} /></NavLink>
-						</NavItem>
-						<NavItem>
-							<NavLink href=""><FontAwesomeIcon icon={faPrint} /></NavLink>
-						</NavItem>
-						<NavItem>
-							<NavLink href="#" data-command="bold" onClick={this.handleClick.bind(this)}><FontAwesomeIcon icon={faBold} /></NavLink>
-						</NavItem>
-						<NavItem>
-							<NavLink href="#" data-command="italic" onClick={this.handleClick.bind(this)}><FontAwesomeIcon icon={faItalic} /></NavLink>
-						</NavItem>
-						<NavItem>
-							<NavLink href="#" data-command="underline" onClick={this.handleClick.bind(this)}><FontAwesomeIcon icon={faUnderline} /></NavLink>
-						</NavItem>
-					</Nav>
 				</header>
 			</React.Fragment>
 		);
