@@ -24,6 +24,20 @@ class Header extends React.Component {
 		document.execCommand(e.target.getAttribute('data-command'), false, null);
 	}
 
+	handleSave(e) {
+		fetch('/api/saveNewDocument', {
+			method: 'post',
+			body: JSON.stringify({
+				name: this.props.noteName,
+				body: this.props.noteBody
+			})
+		}).then(() => {
+			console.log("Success");
+		}).catch((err) => {
+			console.error(err);
+		});
+	}
+
 	render() {
 		return (
 			<React.Fragment>
@@ -45,7 +59,7 @@ class Header extends React.Component {
 								<NavLink href="">Export</NavLink>
 							</NavItem>
 							<NavItem>
-								<NavLink href="">Save</NavLink>
+								<NavLink href="#" onClick={this.handleSave.bind(this)}>Save</NavLink>
 							</NavItem>
 							<NavItem>
 								<NavLink href="">Save and close</NavLink>
