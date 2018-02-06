@@ -25,14 +25,17 @@ class Header extends React.Component {
 	}
 
 	handleSave(e) {
-		fetch('/api/saveNewDocument', {
+		fetch('/api/notes/new', {
 			method: 'post',
+			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({
 				name: this.props.noteName,
 				body: this.props.noteBody
 			})
-		}).then(() => {
-			console.log("Success");
+		}).then((res) => {
+			return res.json();
+		}).then((res) => {
+			console.log(res);
 		}).catch((err) => {
 			console.error(err);
 		});

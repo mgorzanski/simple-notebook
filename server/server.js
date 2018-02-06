@@ -2,20 +2,30 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
+const MongoClient = require('mongodb').MongoClient;
+const assert = require('assert');
 
 const jwt = require('jsonwebtoken');
 const config = require('./config');
-const User = require('./app/models/User');
+//const User = require('./app/models/User');
 
 const port = process.env.PORT || 8080;
-mongoose.connect(config.database);
+//mongoose.connect(config.database);
 app.set('superSecret', config.secret);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(morgan('dev'));
+
+const dbName = 'simple-notebook';
+let db;
+MongoClient.connect(config.database, function (err, client) {
+	assert.equal(null, err);
+	console.log("Connected successfully to server");
+	db = client.db(dbName);
+});
 
 app.get('/', function (req, res) {
 	res.send('Hello! The API is at http://localhost:' + port + '/api');
@@ -41,24 +51,34 @@ app.get('/setup', function (req, res) {
 
 const apiRoutes = express.Router();
 
-apiRoutes.use(function (req, res, next) {
-	var token = req.body.token || req.query.token || req.headers['x-access-token'];
+// apiRoutes.use(function (req, res, next) {
+// 	var token = req.body.token || req.query.token || req.headers['x-access-token'];
 
-	if (token) {
-		jwt.verify(token, app.get('superSecret'), function (err, decoded) {
-			if (err) {
-				return res.json({ success: false, message: 'Failed to authenticate token.' });
-			} else {
-				req.decoded = decoded;
-				next();
-			}
-		});
-	} else {
-		return res.status(403).send({
-			success: false,
-			message: 'No token provided.'
-		});
-	}
+// 	if (token) {
+// 		jwt.verify(token, app.get('superSecret'), function (err, decoded) {
+// 			if (err) {
+// 				return res.json({ success: false, message: 'Failed to authenticate token.' });
+// 			} else {
+// 				req.decoded = decoded;
+// 				next();
+// 			}
+// 		});
+// 	} else {
+// 		return res.status(403).send({
+// 			success: false,
+// 			message: 'No token provided.'
+// 		});
+// 	}
+// });
+
+apiRoutes.post('/notes/new', function (req, res) {
+	let Note = db.collection('Note');
+	console.log(req.body.name);
+	Note.insert({
+		"NoteName" : req.body.name,
+		"NoteBody" : req.body.body
+	});
+	res.send(JSON.stringify({message: "Success"}));
 });
 
 apiRoutes.get('/', function (req, res) {
